@@ -24,4 +24,13 @@ public class GridPoint {
     public boolean hasSameCoordinatesWith(GridPoint target) {
         return this.x == target.x && this.y == target.y;
     }
+
+    public boolean isNeighborOf(GridPoint target) {
+        return distanceFrom(target) == 1;
+    }
+
+    private double distanceFrom(GridPoint target) {
+        return Math.sqrt(Math.pow(this.x - target.x, 2) + Math.pow(this.y - target.y, 2));
+    }
+
 }
